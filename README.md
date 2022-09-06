@@ -1,6 +1,6 @@
 # Live Demo
 
-[Pokémon App]([https://dxc-challenge-pokeapi.vercel.app]).
+[Pokémon App][https://dxc-challenge-pokeapi.vercel.app]
 
 ## Available Scripts
 
