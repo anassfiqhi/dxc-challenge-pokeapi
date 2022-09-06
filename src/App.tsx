@@ -1,8 +1,9 @@
-import React, { useCallback, useRef, useState } from 'react'
+import { useState } from 'react'
 import Pokemon from './Components/Pokemon/Pokemon'
 import { usePokemons } from './Hooks/usePokemons'
 import PokeBall from './Components/PokeBall/PokeBall'
 import './App.css'
+import useLoader from './Hooks/useLoader'
 
 function App() {
 
@@ -17,17 +18,7 @@ function App() {
 
   const [selected, setSelected] = useState<string>()
 
-  const observer = useRef<IntersectionObserver | null>(null)
-  const LoaderRef = useCallback((node: any) => {
-    if (status === 'loading') return
-    if (observer.current) observer.current?.disconnect()
-    observer.current = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && hasNextPage) {
-        fetchNextPage()
-      }
-    })
-    if (node) observer.current.observe(node)
-  }, [status, hasNextPage, fetchNextPage])
+  const LoaderRef = useLoader(() => fetchNextPage(), { status, hasNextPage: !!hasNextPage })
 
   if (status === 'loading') return (
     <div className='flex justify-center items-center w-full h-full'>
