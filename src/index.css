@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes LetterSpacingAnimation {
+  0% {
+    letter-spacing: 35px;
+  }
+
+  100% {
+    letter-spacing: 5px;
+  }
+}
+
+@font-face {
+  font-family: 'pokemon';
+  src: local('pokemon'),
+    url('./fonts/pokemon/Pokemon Solid.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@layer base {
+  .font-pokemon {
+    font-family: 'pokemon', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    text-shadow: -3px 0 #326ab2, 0 3px #326ab2, 3px 0 #326ab2, 0 -3px #326ab2;
+    letter-spacing: 5px;
+  }
+
+  .font-pokemon-hollow {
+    font-family: 'pokemon', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    text-shadow: -3px 0 #326ab2, 0 3px #326ab2, 3px 0 #326ab2, 0 -3px #326ab2;
+    letter-spacing: 5px;
+  }
+}
+
+.spacing-animation {
+  animation: LetterSpacingAnimation .5s ease-in-out;
+}
+
 html,
 body,
 #root {

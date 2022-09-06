@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className='App flex flex-col max-w-3xl md:max-w-4xl mx-auto'>
-      <h1 className='sticky top-0 w-full text-center bg-slate-50 text-5xl'>Pokémons</h1>
+      <h1 className='sticky top-0 w-full text-center bg-slate-50 text-5xl text-[#ffcc03] p-3 font-pokemon spacing-animation'>Pokémons</h1>
       <div className='flex flex-wrap'>
 
         {data?.pages.map((page) => {
