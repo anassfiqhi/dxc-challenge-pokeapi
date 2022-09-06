@@ -3,6 +3,7 @@ import axios from 'axios'
 import queryString from 'query-string'
 import { useInfiniteQuery } from 'react-query'
 import './App.css'
+import Pokemon from './Components/Pokemon/Pokemon'
 
 const fetchPokemons = async (pageParam = 0) => {
   const { data } = await axios.get(
@@ -42,10 +43,7 @@ function App() {
         {data?.pages.map((page) => {
           return (
             page.results.map((poke: any) => (
-              <div className='pokemon cursor-pointer mx-auto' onClick={() => { }} key={poke.name}>
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${(poke.url as string).split('/').at(-2)}.png`} alt={poke.name} />
-                <p>{poke.name}</p>
-              </div>
+              <Pokemon onClick={() => { }} pokemon={poke} key={poke.url} />
             ))
 
           );
