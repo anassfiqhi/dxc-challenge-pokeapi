@@ -4,6 +4,7 @@ import { usePokemons } from './Hooks/usePokemons'
 import PokeBall from './Components/PokeBall/PokeBall'
 import './App.css'
 import useLoader from './Hooks/useLoader'
+import Modal from './Components/Modal/Modal'
 
 function App() {
 
@@ -50,7 +51,7 @@ function App() {
             isFetching={isFetching || isFetchingNextPage} className='mx-auto' loadingMessage='Loading ...' />
         </div>
       </div>
-
+      <Modal key={'modal'} url={selected!} open={!!selected} onClose={() => { setSelected(undefined) }} />
     </div >
   );
 }
