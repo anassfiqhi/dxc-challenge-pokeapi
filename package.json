@@ -28,7 +28,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext=.js,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "cy:open": "cypress open --e2e --browser chrome",
+    "cy:run": "cypress run --e2e --browser chrome",
+    "cy:open-ct": "cypress open --component --browser chrome",
+    "cy:run-ct": "cypress run --component --browser chrome"
   },
   "eslintConfig": {
     "extends": [
