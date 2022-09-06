@@ -1,0 +1,121 @@
+
+#charname {
+    /*display:none;*/
+  }
+  
+  #whitebox {}
+  
+  .whitebox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f5f5f2;
+    opacity: 0;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+  }
+  
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fetching .gravity {
+    animation: shake 0.75s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  @keyframes shake {
+    20% {
+      transform: rotate(-10deg);
+    }
+  
+    60% {
+      transform: rotate(10deg);
+    }
+  
+    80% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .fetching .inner {
+  
+    animation: pulse 0.75s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  @keyframes pulse {
+    25% {
+      opacity: 0.7;
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  
+  @keyframes squash {
+    to {
+      transform: scaleY(0.9);
+    }
+  }
+  
+  @keyframes scaleUp {
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes hide {
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .hide {
+    animation: hide 1s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  .failure .open {
+    animation: scaleUp 0.2s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  .failure .top {
+    animation: translateUp 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  @keyframes translateUp {
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .failure .bottom {
+    animation: translateDown 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  @keyframes translateDown {
+    to {
+      transform: translateY(5px);
+    }
+  }
+  
+  .failure .center {
+    animation: translateHigher 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  @keyframes translateHigher {
+    to {
+      transform: translateY(-18px);
+    }
+  }
