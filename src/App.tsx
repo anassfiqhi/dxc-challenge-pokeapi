@@ -29,10 +29,10 @@ function App() {
   if (status === 'error') return <p>error...</p>
 
   return (
-    <div className="App">
+    <div className='App flex flex-col max-w-3xl md:max-w-4xl mx-auto'>
+      <h1 className='sticky top-0 w-full text-center bg-slate-50 text-5xl'>Pokémons</h1>
+      <div className='flex flex-wrap'>
 
-      <h1 className='fixed top-0 w-full text-center'>Pokémons</h1>
-      <div className='pokemons flex flex-wrap'>
         {data?.pages.map((page) => {
           return (
             page.results.map((poke: any) => (
