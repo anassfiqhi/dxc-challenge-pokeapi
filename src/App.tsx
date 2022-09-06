@@ -23,7 +23,8 @@ function App() {
 
   if (status === 'loading') return (
     <div className='flex justify-center items-center w-full h-full'>
-      loading...
+      <PokeBall width={100} height={100}
+        isFetching={isFetching || isFetchingNextPage} className='mx-auto' />loading...
     </div>
   )
 
